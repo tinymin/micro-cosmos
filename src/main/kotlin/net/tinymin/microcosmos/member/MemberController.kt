@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
 @RestController
+@RequestMapping("/v1")
 class MemberController(private val memberService: MemberService) {
     @PostMapping("/members/join")
     fun memberJoin(@RequestBody @Valid joinRequest: JoinRequest): Member {
