@@ -2,14 +2,24 @@ spring:
   datasource:
     hikari:
       driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      jdbc-url: jdbc:log4jdbc:mariadb://192.168.1.20:3306/perpetual
+      jdbc-url: jdbc:log4jdbc:mariadb://192.168.1.20:3306/micro-cosmos
       username:
       password:
+    url: jdbc:log4jdbc:mariadb://192.168.1.20:3306/micro-cosmos
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
   jpa:
+    database: mysql
     hibernate:
-      ddl-auto: create
+      ddl-auto: none
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
     properties:
       hibernate:
         show_sql: true
         format_sql: true
+#      javax.persistence.schema-generation.database.action: none
+#      javax.persistence.schema-generation.create-source: script
+#      javax.persistence.schema-generation.create-script-source: create.sql
+#      javax.persistence.schema-generation.drop-source: script
+#      javax.persistence.schema-generation.drop-script-source: drop.sql
