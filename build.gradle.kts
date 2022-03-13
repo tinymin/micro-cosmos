@@ -40,8 +40,11 @@ dependencies {
 
 	// https://mvnrepository.com/artifact/com.github.javafaker/javafaker
 	implementation("com.github.javafaker:javafaker:1.0.2")
-	implementation("io.springfox:springfox-swagger2:2.5.0")
-	implementation("io.springfox:springfox-swagger-ui:2.5.0")
+
+	// https://mvnrepository.com/artifact/org.springdoc/springdoc-openapi-ui
+	implementation("org.springdoc:springdoc-openapi-ui:1.6.6")
+	implementation("org.springdoc:springdoc-openapi-kotlin:1.6.6")
+	implementation("org.springdoc:springdoc-openapi-data-rest:1.6.6")
 }
 
 tasks.withType<KotlinCompile> {
