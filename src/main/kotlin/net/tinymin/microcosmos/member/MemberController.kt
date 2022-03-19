@@ -17,7 +17,7 @@ class MemberController(private val memberService: MemberService) {
         return memberService.getMember(memberId);
     }
 
-    @GetMapping("/members/{memberId}/closure")
+    @DeleteMapping("/members/{memberId}/closure")
     fun closureMember(@PathVariable memberId: Long) : MemberClosureDto {
         return memberService.closureMember(memberId)
     }
