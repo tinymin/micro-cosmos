@@ -2,10 +2,10 @@ spring:
   datasource:
     hikari:
       driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
-      jdbc-url: jdbc:log4jdbc:mariadb://192.168.1.20:3306/micro-cosmos
+      jdbc-url: jdbc:log4jdbc:mariadb://tinymin.asuscomm.com:6033/micro-cosmos
       username:
       password:
-    url: jdbc:log4jdbc:mariadb://192.168.1.20:3306/micro-cosmos
+    url: jdbc:log4jdbc:mariadb://tinymin.asuscomm.com:6033/micro-cosmos
     driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy
 
   jpa:

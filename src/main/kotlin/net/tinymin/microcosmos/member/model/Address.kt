@@ -1,9 +1,11 @@
-package net.tinymin.microcosmos.member
+package net.tinymin.microcosmos.member.model
 
+import io.swagger.v3.oas.annotations.media.Schema
 import javax.persistence.Embeddable
 
+@Schema(hidden = true)
 @Embeddable
-data class Address(
+class Address(
     var country: String?,
     var state: String?,
     var city: String?,
