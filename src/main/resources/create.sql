@@ -11,6 +11,12 @@ create table member (
     street1 varchar(100) comment '주소1',
     street2 varchar(100) comment '주소2',
     zipcode varchar(20) comment '우편번호',
-    primary key (id)
+    createdAt datetime(6) comment '생성일시',
+    updatedAt datetime(6) comment '수정일시',
+    createdBy varchar(255) comment '생성자',
+    updatedBy varchar(255) comment '수정자',
+    primary key (id),
+    key `idx_email` (`email`),
+    key `idx_cellphone` (`cellPhone`)
 ) engine=InnoDB default charset=utf8mb4 comment='회원 정보'
 ;

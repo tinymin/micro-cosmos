@@ -1,6 +1,9 @@
 package net.tinymin.microcosmos.member
 
-import net.tinymin.microcosmos.member.dto.MemberClosureDto
+import net.tinymin.microcosmos.member.dto.MemberDto
+import net.tinymin.microcosmos.member.model.EditRequest
+import net.tinymin.microcosmos.member.model.JoinRequest
+import net.tinymin.microcosmos.member.model.Member
 import org.springframework.web.bind.annotation.*
 import javax.validation.Valid
 
@@ -8,8 +11,8 @@ import javax.validation.Valid
 @RequestMapping("/v1")
 class MemberController(private val memberService: MemberService) {
     @PostMapping("/members/join")
-    fun memberJoin(@RequestBody @Valid joinRequest: JoinRequest): Member {
-        return memberService.memberJoin(joinRequest);
+    fun memberJoin(@RequestBody @Valid joinRequest: JoinRequest): MemberDto {
+        return memberService.joinMember(joinRequest);
     }
 
     @GetMapping("/members/{memberId}")
@@ -17,8 +20,13 @@ class MemberController(private val memberService: MemberService) {
         return memberService.getMember(memberId);
     }
 
+    @PutMapping("/members/{memberId}")
+    fun editMember(@PathVariable memberId: Long, @RequestBody @Valid editRequest: EditRequest): MemberDto {
+        return memberService.editMember(memberId, editRequest);
+    }
+
     @DeleteMapping("/members/{memberId}/closure")
-    fun closureMember(@PathVariable memberId: Long) : MemberClosureDto {
+    fun closureMember(@PathVariable memberId: Long) : MemberDto {
         return memberService.closureMember(memberId)
     }
 }
