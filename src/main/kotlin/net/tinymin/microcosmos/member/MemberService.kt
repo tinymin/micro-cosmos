@@ -15,6 +15,10 @@ class MemberService (private val memberRepository: MemberRepository) {
         return MemberDto.ofMember(newMember)
     }
 
+    fun getAllMembers(): List<Member> {
+        return memberRepository.findAll()
+    }
+
     fun getMember(memberId: Long): Member {
         return memberRepository.findById(memberId).orElseThrow()
     }
